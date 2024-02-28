@@ -1,14 +1,9 @@
 from flask import Flask,render_template,request
-import requests
+from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, Float
 from sqlalchemy_utils import database_exists, create_database
-from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String
-from sqlalchemy import Column, Integer, String, Float
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy_utils import database_exists, create_database
-from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy.orm import sessionmaker,DeclarativeBase
 from datetime import datetime
-import sqlite3 
-import sys
+import requests
 
 class Base(DeclarativeBase):
     pass
