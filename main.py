@@ -4,7 +4,7 @@ from sqlalchemy_utils import database_exists, create_database
 from sqlalchemy.orm import sessionmaker,DeclarativeBase
 from datetime import datetime
 import requests
-
+import sqlite3
 class Base(DeclarativeBase):
     pass
 class day(Base):
@@ -35,7 +35,7 @@ class day(Base):
 
 
 
-PORT = "5000"
+PORT = "50000"
 app = Flask(__name__)
 
 #weather API key big secret
