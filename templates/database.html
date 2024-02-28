@@ -1,0 +1,41 @@
+{% extends "base.html"%}
+{% block content %}
+
+<script>
+$(window).on('pageshow', function() {
+    sendstuff();
+});
+
+function sendstuff(){
+$('#database').submit(function(e){
+    e.preventDefault();
+    data = new FormData(this)
+    var btn = $(this).find("input[type=submit]:focus" );
+    data.append(this.name,btn.attr("value"))
+    $.ajax({
+        url: '/database',
+        type: 'post',
+	dataType: "HTML",
+        data: data,
+	processData: false,
+        contentType: false,
+        success:function(data){
+		$("#container").html(data)
+        }
+    });
+});
+}
+
+</script>
+
+<form id="database" name="action">
+<label for="database">SQL queries</label><br>
+<input type="submit" value="Generate report 1">
+<input type="submit" value="Generate report 2">
+</form>
+
+<div id="container"></div>
+
+
+{% endblock %}
+

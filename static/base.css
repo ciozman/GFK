@@ -1,0 +1,44 @@
+@font-face{
+	font-family:ss;
+	src:url(osans.ttf);
+}
+
+body {
+	user-select:none;
+	color: white;
+	margin : 0px;
+  	font-family: ss;
+	background-color: rgba(0,5,20,1);
+}
+header {
+	text-align: center;
+	font-size: 2vw;
+	padding : 1vw;
+}
+
+footer {
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align:right;
+}
+
+table, th, td {
+  border:1px solid white;
+}
+table {
+	width:100%;
+}
+#container{
+	text-align:center;
+	justify-content:center;
+}
+form {
+	justify-content:center;
+	text-align:center;
+	padding: 10px;
+
+}
+

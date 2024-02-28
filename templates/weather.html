@@ -1,0 +1,41 @@
+{% extends "base.html"%}
+{% block content %}
+
+<script>
+
+$(window).on('pageshow', function() {
+    sendstuff();
+});
+
+
+function sendstuff(){
+$('#city').submit(function(e){
+    e.preventDefault();
+    $.ajax({
+        url: '/weather',
+        type: 'post',
+	dataType: "HTML",
+        data: new FormData(this),
+	processData: false,
+        contentType: false,
+        success:function(data){
+		$("#container").html(data)
+        }
+    });
+});
+}
+
+
+</script>
+
+<form id="city">
+<label for="city">City</label><br>
+<input type="text" style="margin:20px" name="city"><br>
+<input type="submit" value="Send">
+</form>
+
+<div id="container"></div>
+
+
+{% endblock %}
+

@@ -1,0 +1,19 @@
+<span><b>Showing data for {{location}}</b></span>
+<table>
+<tr>
+	<th>day</th>
+	<th></th>
+	<th>minimum temperature</th>
+	<th>average temperature</th>
+	<th>maximum temperature</th>
+</tr>
+{% for x in forecast %}
+<tr>
+	<th>{{x.day +" "+ x.month}}</th>
+	<th><img src={{x.icon}}></a></th>
+	<th>{{x.temp_min}}</th>
+	<th>{{x.temp_avg}}</th>
+	<th>{{x.temp_max}}</th>
+</tr>
+{% endfor %}
+</table>

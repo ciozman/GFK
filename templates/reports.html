@@ -1,0 +1,9 @@
+<table>
+{% for x in data%}
+<tr>
+{% for y in x%}
+<th>{{ y if y is not none else '' }}</th>
+{% endfor %}
+</tr>
+{% endfor %}
+</table>
