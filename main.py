@@ -106,7 +106,6 @@ def database_post():
     #select p.locatie,count(v.chosen_person) from persons p left join votes v on p.id = v.chosen_person and v.valid=1 group by p.locatie;
     #with validation 
         data = cor.execute("select p.locatie,count(v.chosen_person) from persons p left join votes v on p.id = v.chosen_person group by p.locatie;").fetchall()
-    print (data)
     conn.close()
     return render_template("reports.html", data = data)
 
